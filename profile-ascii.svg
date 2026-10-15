@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 450" width="100%" height="100%">
+  <defs>
+    <linearGradient id="term-border" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FF8C00" stop-opacity="0.45"/>
+      <stop offset="50%" stop-color="#30363d" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#00FF66" stop-opacity="0.35"/>
+    </linearGradient>
+  </defs>
+  <style>
+    .terminal-bg { fill: #0D1117; stroke: url(#term-border); stroke-width: 1.4; rx: 10; }
+    .header-bar { fill: #161b22; }
+    .header-title { font-family: 'JetBrains Mono', 'Fira Code', monospace; font-size: 11.5px; fill: #8b949e; font-weight: 600; }
+    .dot-red { fill: #ff5f56; }
+    .dot-yellow { fill: #ffbd2e; }
+    .dot-green { fill: #27c93f; }
+
+    .ascii-row {
+      font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace;
+      font-size: 13.5px;
+      white-space: pre;
+    }
+
+    /* Left Half: Bright Orange */
+    .part-left {
+      fill: #FF8C00;
+      font-weight: 700;
+      filter: drop-shadow(0 0 1.2px rgba(255, 140, 0, 0.4));
+    }
+
+    /* Left Eye: Radiant Amber/Yellow */
+    .eye-left {
+      fill: #FFD700;
+      font-weight: 900;
+      filter: drop-shadow(0 0 3px rgba(255, 215, 0, 0.95));
+    }
+    .eye-left-brow {
+      fill: #FFA500;
+      font-weight: 800;
+    }
+
+    /* Right Half: Charcoal Gray / Dark Steel with crisp contrast on #0D1117 */
+    .part-right {
+      fill: #484F58;
+      font-weight: 700;
+      filter: drop-shadow(0 0 1px rgba(110, 118, 129, 0.25));
+    }
+
+    /* Right Eye: Terminal Cyber Green / White Glow */
+    .eye-right {
+      fill: #00FF66;
+      font-weight: 900;
+      filter: drop-shadow(0 0 3px rgba(0, 255, 102, 0.95));
+    }
+    .eye-right-brow {
+      fill: #2ea043;
+      font-weight: 800;
+    }
+
+    /* Prompt and Cursor */
+    .prompt-text {
+      font-family: 'JetBrains Mono', 'Fira Code', monospace;
+      font-size: 12px;
+      font-weight: 600;
+    }
+    .prompt-user { fill: #58a6ff; }
+    .cursor {
+      fill: #00FF66;
+      animation: blink 0.9s infinite step-start;
+      font-weight: 900;
+    }
+
+    @keyframes fadeIn {
+      0%   { opacity: 0; transform: translateY(2px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50%      { opacity: 0; }
+    }
+
+    .anim-row {
+      opacity: 0;
+      animation: fadeIn 0.35s ease-out forwards;
+    }
+  </style>
+  <rect x="2" y="2" width="676" height="446" class="terminal-bg"/>
+  <path d="M 2 12 C 2 6 6 2 12 2 L 668 2 C 674 2 678 6 678 12 L 678 32 L 2 32 Z" class="header-bar"/>
+  <circle cx="18" cy="17" r="5" class="dot-red"/>
+  <circle cx="33" cy="17" r="5" class="dot-yellow"/>
+  <circle cx="48" cy="17" r="5" class="dot-green"/>
+  <text x="340" y="21" text-anchor="middle" class="header-title">kekkan74@soc-node: ~ (github-invertocat.ascii)</text>
+  <text x="48" y="75.0" class="ascii-row anim-row" style="animation-delay: 0.05s;"><tspan class="part-left">            .-------------</tspan><tspan class="part-right">----------------.          </tspan></text>
+  <text x="48" y="93.5" class="ascii-row anim-row" style="animation-delay: 0.09s;"><tspan class="part-left">         .----------------</tspan><tspan class="part-right">-------------------.       </tspan></text>
+  <text x="48" y="112.0" class="ascii-row anim-row" style="animation-delay: 0.13s;"><tspan class="part-left">       .---------..-------</tspan><tspan class="part-right">----------..---------.     </tspan></text>
+  <text x="48" y="130.5" class="ascii-row anim-row" style="animation-delay: 0.17s;"><tspan class="part-left">     .---------/    \-----</tspan><tspan class="part-right">--------/    \---------.   </tspan></text>
+  <text x="48" y="149.0" class="ascii-row anim-row" style="animation-delay: 0.21s;"><tspan class="part-left">    .---------|      &#x27;----</tspan><tspan class="part-right">-------&#x27;      |---------.  </tspan></text>
+  <text x="48" y="167.5" class="ascii-row anim-row" style="animation-delay: 0.25s;"><tspan class="part-left">   .----------|           </tspan><tspan class="part-right">              |----------. </tspan></text>
+  <text x="48" y="186.0" class="ascii-row anim-row" style="animation-delay: 0.29s;"><tspan class="part-left">   .---------/     \___   </tspan><tspan class="part-right">      ___/     \---------. </tspan></text>
+  <text x="48" y="204.5" class="ascii-row anim-row" style="animation-delay: 0.33s;"><tspan class="part-left">  .---------|      </tspan><tspan class="eye-left">( | )</tspan><tspan class="part-left">  </tspan><tspan class="part-right">     </tspan><tspan class="eye-right">( | )</tspan><tspan class="part-right">      |---------.</tspan></text>
+  <text x="48" y="223.0" class="ascii-row anim-row" style="animation-delay: 0.37s;"><tspan class="part-left">  .</tspan><tspan class="eye-left-brow">---</tspan><tspan class="part-left">------|       ---   </tspan><tspan class="part-right">      </tspan><tspan class="eye-right-brow">---</tspan><tspan class="part-right">       |---------.</tspan></text>
+  <text x="48" y="241.5" class="ascii-row anim-row" style="animation-delay: 0.41s;"><tspan class="part-left">  .----------\            </tspan><tspan class="part-right">_v_            /----------.</tspan></text>
+  <text x="48" y="260.0" class="ascii-row anim-row" style="animation-delay: 0.45s;"><tspan class="part-left">   .----------&#x27;-.         </tspan><tspan class="part-right">            .-&#x27;----------. </tspan></text>
+  <text x="48" y="278.5" class="ascii-row anim-row" style="animation-delay: 0.49s;"><tspan class="part-left">   .-------------\        </tspan><tspan class="part-right">           /-------------. </tspan></text>
+  <text x="48" y="297.0" class="ascii-row anim-row" style="animation-delay: 0.53s;"><tspan class="part-left">    .-----.._     |       </tspan><tspan class="part-right">          |         .---.  </tspan></text>
+  <text x="48" y="315.5" class="ascii-row anim-row" style="animation-delay: 0.57s;"><tspan class="part-left">     .-------&#x27;-.  |       </tspan><tspan class="part-right">          |       .-----.  </tspan></text>
+  <text x="48" y="334.0" class="ascii-row anim-row" style="animation-delay: 0.61s;"><tspan class="part-left">       .--------\ |     .-</tspan><tspan class="part-right">----.     |     .-----.    </tspan></text>
+  <text x="48" y="352.5" class="ascii-row anim-row" style="animation-delay: 0.65s;"><tspan class="part-left">         .-------\|    |--</tspan><tspan class="part-right">-----|    |   .-----.      </tspan></text>
+  <text x="48" y="371.0" class="ascii-row anim-row" style="animation-delay: 0.69s;"><tspan class="part-left">            &#x27;-----|____|--</tspan><tspan class="part-right">-----|____| .-----&#x27;        </tspan></text>
+  <text x="48" y="428" class="prompt-text anim-row" style="animation-delay: 0.81s;"><tspan class="prompt-user">kekkan74@soc-node:~$ </tspan><tspan class="cursor">█</tspan></text>
+</svg>
