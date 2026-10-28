@@ -32,22 +32,29 @@ jobs:
         run: |
           python scripts/fetch_contributions.py Kekkan74 data/contributions.json
 
+      - name: 🛰️ Fetch recent commits & telemetry stream
+        run: |
+          python scripts/fetch_activity.py Kekkan74 data/activity.json
+
       - name: 🎨 Render animated contribution heatmap SVG
         run: |
           python scripts/render_heatmap_svg.py data/contributions.json contrib-heatmap.svg
+
+      - name: ⚡ Render live commit activity stream SVG
+        run: |
+          python scripts/render_commit_activity_svg.py data/activity.json commit-activity.svg
 
       - name: 🚀 Commit and push if changed
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           
-          git add data/contributions.json contrib-heatmap.svg
+          git add data/contributions.json data/activity.json contrib-heatmap.svg commit-activity.svg
           
           if git diff --staged --quiet; then
-            echo "⚡ No changes detected in contribution data or SVG."
+            echo "⚡ No changes detected in contribution data or SVGs."
           else
-            git commit -m "chore(profile): daily heatmap & stats refresh [skip ci]"
+            git commit -m "chore(profile): daily heatmap & telemetry refresh [skip ci]"
             git push
-            echo "✅ Successfully updated profile heatmap on GitHub."
+            echo "✅ Successfully updated profile heatmap and commit activity on GitHub."
           fi
-

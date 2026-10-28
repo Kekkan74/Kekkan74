@@ -24,14 +24,6 @@
 
 ---
 
-### 💻 <code>[TERMINAL // SYSTEM_SPECS]</code>
-
-<div align="center">
-  <img src="info-card.svg" alt="Neofetch System Info" width="100%" />
-</div>
-
----
-
 ### 🛠️ <code>[SECURITY_STACK &amp; ARSENAL]</code>
 
 <div align="center">
@@ -61,11 +53,25 @@
 
 ---
 
-### 📡 <code>[LIVE_ACTIVITY // COMMIT_HEATMAP]</code>
+### 📡 <code>[LIVE_ACTIVITY &amp; COMMIT_TELEMETRY]</code>
 
 <div align="center">
+
+  <!-- LIVE COMMIT ACTIVITY STREAM -->
+  <img src="commit-activity.svg" alt="Live Commit Activity Stream" width="100%" />
+
+  <br/><br/>
+
+  <!-- ANNUAL CONTRIBUTION HEATMAP -->
   <img src="contrib-heatmap.svg" alt="Contribution Heatmap" width="100%" />
-  <p><sub><em>⚡ Actualizado diariamente vía GitHub Actions de forma 100% autónoma.</em></sub></p>
+
+  <p align="center">
+    <img src="https://img.shields.io/badge/TELEMETRY-REAL--TIME_AUDIT-00ff66?style=flat-square&logo=counter-strike&logoColor=00ff66&labelColor=0d1117" alt="Telemetry Status" />
+    <img src="https://img.shields.io/badge/PIPELINE-GITHUB_ACTIONS_CI%2FCD-00e5ff?style=flat-square&logo=githubactions&logoColor=00e5ff&labelColor=0d1117" alt="Actions CI/CD" />
+    <img src="https://img.shields.io/badge/AUTO_SYNC-DAILY_00%3A00_UTC-ff7700?style=flat-square&logo=clock&logoColor=ff7700&labelColor=0d1117" alt="Daily Sync" />
+  </p>
+  <p><sub><em>⚡ Telemetría de commits y actividad git sincronizada diariamente de forma autónoma.</em></sub></p>
+
 </div>
 
 ---

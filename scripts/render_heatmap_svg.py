@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 render_heatmap_svg.py
-Reads data/contributions.json and generates an animated terminal-styled
+Reads data/contributions.json and generates an upgraded, animated terminal-styled
 contribution heatmap SVG with diagonal wave animation in terminal/cyber green.
 Zero tokens, 100% SVG + CSS, GitHub camo-compatible.
 """
@@ -49,14 +49,14 @@ def render_heatmap(json_path: str, output_svg: str):
                 break
 
     # Dimensions
-    svg_width = 820
-    svg_height = 240
+    svg_width = 860
+    svg_height = 250
     cell_size = 10.5
     cell_gap = 3.2
     step = cell_size + cell_gap
 
-    grid_start_x = 54
-    grid_start_y = 102
+    grid_start_x = 64
+    grid_start_y = 104
 
     svg = []
     svg.append(f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {svg_width} {svg_height}" width="100%" height="100%">')
@@ -70,7 +70,7 @@ def render_heatmap(json_path: str, output_svg: str):
     <linearGradient id="heat-border" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#00ff66" stop-opacity="0.35"/>
       <stop offset="50%" stop-color="#1f2937" stop-opacity="0.3"/>
-      <stop offset="100%" stop-color="#00e5ff" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#00e5ff" stop-opacity="0.3"/>
     </linearGradient>
     <filter id="neon-glow" x="-20%" y="-20%" width="140%" height="140%">
       <feGaussianBlur stdDeviation="1.5" result="blur"/>
@@ -83,25 +83,34 @@ def render_heatmap(json_path: str, output_svg: str):
 
     # CSS styles
     svg.append("""  <style>
-    .terminal-bg { fill: url(#heat-bg); stroke: url(#heat-border); stroke-width: 1.4; rx: 10; }
+    .terminal-bg { fill: url(#heat-bg); stroke: url(#heat-border); stroke-width: 1.5; rx: 10; }
     .header-bar { fill: #111822; }
     .header-title { font-family: 'JetBrains Mono', 'Fira Code', monospace; font-size: 11.5px; fill: #6b7280; font-weight: 600; }
     .dot-red { fill: #ff5f56; }
     .dot-yellow { fill: #ffbd2e; }
     .dot-green { fill: #27c93f; }
 
-    .stat-label { font-family: 'JetBrains Mono', 'Fira Code', monospace; font-size: 11px; fill: #00e5ff; font-weight: 700; }
-    .stat-val   { font-family: 'JetBrains Mono', 'Fira Code', monospace; font-size: 11px; fill: #d1d5db; }
-    .stat-hi    { font-family: 'JetBrains Mono', 'Fira Code', monospace; font-size: 11px; fill: #00ff66; font-weight: 700; }
+    .pulse-dot {
+      animation: blinkDot 1.8s infinite;
+    }
+    @keyframes blinkDot {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.25; }
+    }
+
+    .stat-label { font-family: 'JetBrains Mono', 'Fira Code', monospace; font-size: 10.5px; fill: #64748b; font-weight: 600; }
+    .stat-val   { font-family: 'JetBrains Mono', 'Fira Code', monospace; font-size: 10.5px; fill: #d1d5db; }
+    .stat-c     { font-family: 'JetBrains Mono', 'Fira Code', monospace; font-size: 10.5px; fill: #00e5ff; font-weight: 700; }
+    .stat-hi    { font-family: 'JetBrains Mono', 'Fira Code', monospace; font-size: 10.5px; fill: #00ff66; font-weight: 700; }
 
     .axis-label { font-family: 'JetBrains Mono', 'Fira Code', monospace; font-size: 9.5px; fill: #64748b; font-weight: 500; }
 
     /* Terminal Cyber Green Cell Palette */
-    .lvl-0 { fill: #151c24; }
-    .lvl-1 { fill: #0e4429; }
-    .lvl-2 { fill: #006d32; }
-    .lvl-3 { fill: #26a641; }
-    .lvl-4 { fill: #00ff66; filter: drop-shadow(0 0 2px rgba(0, 255, 102, 0.75)); }
+    .lvl-0 { fill: #111822; stroke: #1a2332; stroke-width: 0.6; }
+    .lvl-1 { fill: #0e4429; stroke: #165b37; stroke-width: 0.6; }
+    .lvl-2 { fill: #006d32; stroke: #009944; stroke-width: 0.6; }
+    .lvl-3 { fill: #26a641; filter: drop-shadow(0 0 1.5px rgba(38, 166, 65, 0.7)); }
+    .lvl-4 { fill: #00ff66; filter: drop-shadow(0 0 3px rgba(0, 255, 102, 0.85)); }
 
     /* Diagonal wave animation */
     @keyframes heatRipple {
@@ -135,14 +144,20 @@ def render_heatmap(json_path: str, output_svg: str):
     svg.append('  <circle cx="18" cy="17" r="5" class="dot-red"/>')
     svg.append('  <circle cx="33" cy="17" r="5" class="dot-yellow"/>')
     svg.append('  <circle cx="48" cy="17" r="5" class="dot-green"/>')
-    svg.append(f'  <text x="{svg_width // 2}" y="21" text-anchor="middle" class="header-title">kekkan74@soc-node: ~ (git activity-heatmap)</text>')
+    svg.append(f'  <text x="{svg_width // 2}" y="21" text-anchor="middle" class="header-title">kekkan74@soc-node: ~ (git activity-heatmap --annual-matrix)</text>')
 
-    # Stats subheader
-    stats_y = 54
-    svg.append(f'  <text x="54" y="{stats_y}">'
-               f'<tspan class="stat-label">[TOTAL] </tspan><tspan class="stat-hi">{total_contribs}</tspan><tspan class="stat-val"> contributions in past year  </tspan>'
-               f'<tspan class="stat-label">[STREAK] </tspan><tspan class="stat-val">Best: </tspan><tspan class="stat-hi">{longest_streak}d  </tspan>'
-               f'<tspan class="stat-label">[STATUS] </tspan><tspan class="stat-hi">Active Hunter</tspan>'
+    # Live pulse badge on top right
+    svg.append(f'  <circle cx="{svg_width - 100}" cy="17" r="3.5" fill="#00e5ff" class="pulse-dot"/>')
+    svg.append(f'  <text x="{svg_width - 90}" y="20.5" font-family="JetBrains Mono, monospace" font-size="9px" fill="#00e5ff" font-weight="700">MATRIX_SYNC</text>')
+
+    # Telemetry Stats subheader
+    stats_y = 52
+    svg.append('  <line x1="24" y1="58" x2="836" y2="58" stroke="#1f2937" stroke-width="0.8"/>')
+    svg.append(f'  <text x="28" y="{stats_y}">'
+               f'<tspan class="stat-label">[TOTAL_COMMITS] </tspan><tspan class="stat-hi">{total_contribs} IN PAST YEAR  </tspan>'
+               f'<tspan class="stat-label">[CURRENT_STREAK] </tspan><tspan class="stat-c">{current_streak}d  </tspan>'
+               f'<tspan class="stat-label">[MAX_STREAK] </tspan><tspan class="stat-hi">{longest_streak}d  </tspan>'
+               f'<tspan class="stat-label">[OPERATIONAL_STATUS] </tspan><tspan class="stat-hi">🟢 ACTIVE DEFENDER</tspan>'
                f'</text>')
 
     # Month Labels
@@ -155,7 +170,7 @@ def render_heatmap(json_path: str, output_svg: str):
     day_labels = [(1, "Mon"), (3, "Wed"), (5, "Fri")]
     for row_idx, label in day_labels:
         dy = grid_start_y + (row_idx * step) + 8.5
-        svg.append(f'  <text x="{grid_start_x - 28}" y="{dy}" class="axis-label">{label}</text>')
+        svg.append(f'  <text x="{grid_start_x - 30}" y="{dy}" class="axis-label">{label}</text>')
 
     # Calendar Cells Grid with diagonal wave delay
     for col_idx, week in enumerate(weeks):
@@ -174,20 +189,23 @@ def render_heatmap(json_path: str, output_svg: str):
 
             tip = f"{cnt} contributions on {date_str}" if cnt > 0 else f"No contributions on {date_str}"
             svg.append(
-                f'  <rect x="{cx:.1f}" y="{cy:.1f}" width="{cell_size}" height="{cell_size}" rx="2" '
+                f'  <rect x="{cx:.1f}" y="{cy:.1f}" width="{cell_size}" height="{cell_size}" rx="2.5" '
                 f'class="lvl-{lvl} heat-cell" style="animation-delay: {delay:.3f}s;">'
                 f'<title>{tip}</title>'
                 f'</rect>'
             )
 
-    # Legend at bottom
-    legend_y = svg_height - 22
-    legend_right_x = grid_start_x + (len(weeks) * step) - 5
-    svg.append(f'  <text x="{legend_right_x - 110}" y="{legend_y + 8}" class="axis-label">Less</text>')
+    # Footer line & Legend at bottom
+    legend_y = svg_height - 20
+    svg.append(f'  <line x1="24" y1="{legend_y - 12}" x2="836" y2="{legend_y - 12}" stroke="#1f2937" stroke-width="0.8"/>')
+    svg.append(f'  <text x="28" y="{legend_y + 8}" class="axis-label">&gt; SOC_TELEMETRY: [NODE_ONLINE] // ENCRYPTION: AES-256 // CRON: DAILY_00:00_UTC</text>')
+
+    legend_right_x = grid_start_x + (len(weeks) * step)
+    svg.append(f'  <text x="{legend_right_x - 115}" y="{legend_y + 8}" class="axis-label">Less</text>')
     for i in range(5):
-        lx = legend_right_x - 80 + (i * (cell_size + 2.5))
+        lx = legend_right_x - 85 + (i * (cell_size + 2.5))
         svg.append(f'  <rect x="{lx}" y="{legend_y}" width="{cell_size}" height="{cell_size}" rx="2" class="lvl-{i}"/>')
-    svg.append(f'  <text x="{legend_right_x + 10}" y="{legend_y + 8}" class="axis-label">More</text>')
+    svg.append(f'  <text x="{legend_right_x + 5}" y="{legend_y + 8}" class="axis-label">More</text>')
 
     svg.append('</svg>\n')
 
@@ -200,4 +218,3 @@ if __name__ == "__main__":
     in_json = sys.argv[1] if len(sys.argv) > 1 else os.path.join(base_dir, "data", "contributions.json")
     out_svg = sys.argv[2] if len(sys.argv) > 2 else os.path.join(base_dir, "contrib-heatmap.svg")
     render_heatmap(in_json, out_svg)
-
