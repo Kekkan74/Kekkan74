@@ -1,21 +1,18 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 295" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 300" width="100%" height="100%">
   <defs>
     <linearGradient id="term-bg" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#0a0e14"/>
       <stop offset="100%" stop-color="#05080c"/>
     </linearGradient>
     <linearGradient id="term-border" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#00e5ff" stop-opacity="0.4"/>
+      <stop offset="0%" stop-color="#00e5ff" stop-opacity="0.45"/>
       <stop offset="50%" stop-color="#1f2937" stop-opacity="0.3"/>
-      <stop offset="100%" stop-color="#00ff66" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#00ff66" stop-opacity="0.45"/>
     </linearGradient>
-    <filter id="neon-cyan" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="1.2" result="blur"/>
-      <feMerge>
-        <feMergeNode in="blur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
+    <linearGradient id="hud-bg-mini" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#111823"/>
+      <stop offset="100%" stop-color="#0b1017"/>
+    </linearGradient>
   </defs>
   <style>
     .terminal-bg { fill: url(#term-bg); stroke: url(#term-border); stroke-width: 1.5; rx: 10; }
@@ -41,78 +38,92 @@
       50% { opacity: 0; }
     }
 
-    .hud-label  { font-family: 'JetBrains Mono', monospace; font-size: 10.5px; fill: #64748b; font-weight: 600; }
-    .hud-val-c  { font-family: 'JetBrains Mono', monospace; font-size: 10.5px; fill: #00e5ff; font-weight: 700; }
-    .hud-val-g  { font-family: 'JetBrains Mono', monospace; font-size: 10.5px; fill: #00ff66; font-weight: 700; }
+    .hud-box    { fill: url(#hud-bg-mini); stroke: #1e293b; stroke-width: 0.8; rx: 5; }
+    .hud-title  { font-family: 'JetBrains Mono', monospace; font-size: 8.5px; fill: #64748b; font-weight: 700; letter-spacing: 0.6px; }
+    .hud-val-c  { font-family: 'JetBrains Mono', monospace; font-size: 12px; fill: #00e5ff; font-weight: 800; }
+    .hud-val-g  { font-family: 'JetBrains Mono', monospace; font-size: 12px; fill: #00ff66; font-weight: 800; }
+    .hud-val-p  { font-family: 'JetBrains Mono', monospace; font-size: 12px; fill: #c084fc; font-weight: 800; }
+    .hud-val-y  { font-family: 'JetBrains Mono', monospace; font-size: 12px; fill: #ffbd2e; font-weight: 800; }
 
-    .col-header { font-family: 'JetBrains Mono', monospace; font-size: 9.5px; fill: #475569; font-weight: 700; letter-spacing: 0.5px; }
+    .col-header { font-family: 'JetBrains Mono', monospace; font-size: 9px; fill: #475569; font-weight: 700; letter-spacing: 0.6px; }
     .log-date   { font-family: 'JetBrains Mono', monospace; font-size: 10px; fill: #94a3b8; }
-    .log-repo   { font-family: 'JetBrains Mono', monospace; font-size: 10px; fill: #f1f5f9; font-weight: 600; }
-    .log-sha    { font-family: 'JetBrains Mono', monospace; font-size: 10px; fill: #64748b; }
+    .log-repo   { font-family: 'JetBrains Mono', monospace; font-size: 10px; fill: #f1f5f9; font-weight: 700; }
+    .log-sha    { font-family: 'JetBrains Mono', monospace; font-size: 10px; fill: #64748b; font-weight: 600; }
     .log-msg    { font-family: 'JetBrains Mono', monospace; font-size: 10px; fill: #cbd5e1; }
 
     .badge-txt  { font-family: 'JetBrains Mono', monospace; font-size: 8.5px; font-weight: 700; text-anchor: middle; }
-    .bottom-cmd { font-family: 'JetBrains Mono', monospace; font-size: 10px; fill: #00ff66; }
-    .bottom-dim { font-family: 'JetBrains Mono', monospace; font-size: 10px; fill: #475569; }
+    .bottom-cmd { font-family: 'JetBrains Mono', monospace; font-size: 9.5px; fill: #00ff66; }
+    .bottom-dim { font-family: 'JetBrains Mono', monospace; font-size: 9.5px; fill: #64748b; }
   </style>
-  <rect x="2" y="2" width="856" height="291" class="terminal-bg"/>
+  <rect x="2" y="2" width="856" height="296" class="terminal-bg"/>
   <path d="M 2 12 C 2 6 6 2 12 2 L 848 2 C 854 2 858 6 858 12 L 858 32 L 2 32 Z" class="header-bar"/>
   <circle cx="18" cy="17" r="5" class="dot-red"/>
   <circle cx="33" cy="17" r="5" class="dot-yellow"/>
   <circle cx="48" cy="17" r="5" class="dot-green"/>
   <text x="430" y="21" text-anchor="middle" class="header-title">kekkan74@soc-node: ~ (tail -f /var/log/audit/git_events.log)</text>
-  <circle cx="768" cy="17" r="3.5" fill="#00ff66" class="pulse-dot"/>
-  <text x="778" y="20.5" font-family="JetBrains Mono, monospace" font-size="9px" fill="#00ff66" font-weight="700">AUDIT_LIVE</text>
-  <line x1="24" y1="52" x2="836" y2="52" stroke="#1f2937" stroke-width="0.8"/>
-  <text x="28" y="46"><tspan class="hud-label">[MONITORED_NODES] </tspan><tspan class="hud-val-c">4 REPOSITORIES  </tspan><tspan class="hud-label">[STATUS] </tspan><tspan class="hud-val-g">🟢 DEFENSE STREAM ACTIVE  </tspan><tspan class="hud-label">[TELEMETRY] </tspan><tspan class="hud-val-c">ZERO-TOKEN PARSED</tspan></text>
-  <text x="28"  y="69" class="col-header">TIMESTAMP (UTC)</text>
-  <text x="168" y="69" class="col-header">EVENT</text>
-  <text x="248" y="69" class="col-header">REPOSITORY</text>
-  <text x="365" y="69" class="col-header">SHA</text>
-  <text x="435" y="69" class="col-header">PAYLOAD / AUDIT MESSAGE</text>
-  <line x1="24" y1="75" x2="836" y2="75" stroke="#1e293b" stroke-width="0.8"/>
-  <rect x="24" y="82" width="812" height="21" rx="4" fill="#0d141f" opacity="0.4"/>
-  <text x="28" y="96" class="log-date">2026-10-28 04:57</text>
-  <rect x="160" y="85" width="58" height="15" rx="3" fill="rgba(0, 229, 255, 0.15)" stroke="#00e5ff" stroke-width="0.6"/>
-  <text x="189" y="96" class="badge-txt" fill="#00e5ff">SYNC</text>
-  <text x="248" y="96" class="log-repo">Kekkan74</text>
-  <text x="365" y="96" class="log-sha">9a2bafe</text>
-  <text x="435" y="96" class="log-msg">chore(profile): daily heatmap &amp; stats refresh [sk...</text>
-  <rect x="24" y="107" width="812" height="21" rx="4" fill="#0d141f" opacity="0.4"/>
-  <text x="28" y="121" class="log-date">2026-05-17 14:16</text>
-  <rect x="160" y="110" width="58" height="15" rx="3" fill="rgba(192, 132, 252, 0.15)" stroke="#c084fc" stroke-width="0.6"/>
-  <text x="189" y="121" class="badge-txt" fill="#c084fc">MERGE</text>
-  <text x="248" y="121" class="log-repo">Top-Globales</text>
-  <text x="365" y="121" class="log-sha">38261a3</text>
-  <text x="435" y="121" class="log-msg">Merge pull request #1 from Kekkan74/copilot/set-r...</text>
-  <rect x="24" y="132" width="812" height="21" rx="4" fill="#0d141f" opacity="0.4"/>
-  <text x="28" y="146" class="log-date">2026-05-17 14:14</text>
-  <rect x="160" y="135" width="58" height="15" rx="3" fill="rgba(0, 229, 255, 0.15)" stroke="#00e5ff" stroke-width="0.6"/>
-  <text x="189" y="146" class="badge-txt" fill="#00e5ff">SYNC</text>
-  <text x="248" y="146" class="log-repo">Top-Globales</text>
-  <text x="365" y="146" class="log-sha">3512a89</text>
-  <text x="435" y="146" class="log-msg">chore: move project files to repository root</text>
-  <rect x="24" y="157" width="812" height="21" rx="4" fill="#0d141f" opacity="0.4"/>
-  <text x="28" y="171" class="log-date">2026-02-23 12:29</text>
-  <rect x="160" y="160" width="58" height="15" rx="3" fill="rgba(255, 189, 46, 0.15)" stroke="#ffbd2e" stroke-width="0.6"/>
-  <text x="189" y="171" class="badge-txt" fill="#ffbd2e">CONFIG</text>
-  <text x="248" y="171" class="log-repo">dotfiles</text>
-  <text x="365" y="171" class="log-sha">a43050e</text>
-  <text x="435" y="171" class="log-msg">My identity for @lewagon in the gitconfig</text>
-  <rect x="24" y="182" width="812" height="21" rx="4" fill="#0d141f" opacity="0.4"/>
-  <text x="28" y="196" class="log-date">2025-12-02 09:42</text>
-  <rect x="160" y="185" width="58" height="15" rx="3" fill="rgba(255, 189, 46, 0.15)" stroke="#ffbd2e" stroke-width="0.6"/>
-  <text x="189" y="196" class="badge-txt" fill="#ffbd2e">CONFIG</text>
-  <text x="248" y="196" class="log-repo">dotfiles</text>
-  <text x="365" y="196" class="log-sha">0e5fdfe</text>
-  <text x="435" y="196" class="log-msg">Revert &quot;My identity for @lewagon in the gitconfig&quot;</text>
-  <rect x="24" y="207" width="812" height="21" rx="4" fill="#0d141f" opacity="0.4"/>
-  <text x="28" y="221" class="log-date">2025-03-06 22:56</text>
-  <rect x="160" y="210" width="58" height="15" rx="3" fill="rgba(56, 189, 248, 0.15)" stroke="#38bdf8" stroke-width="0.6"/>
-  <text x="189" y="221" class="badge-txt" fill="#38bdf8">DOCS</text>
-  <text x="248" y="221" class="log-repo">apuntesPython</text>
-  <text x="365" y="221" class="log-sha">6d35cf5</text>
-  <text x="435" y="221" class="log-msg">CLASE 3</text>
-  <line x1="24" y1="261" x2="836" y2="261" stroke="#1f2937" stroke-width="0.8"/>
-  <text x="28" y="275"><tspan class="bottom-cmd">kekkan74@soc-node:~$ </tspan><tspan fill="#e2e8f0" font-family="JetBrains Mono, monospace" font-size="10px">git telemetry --integrity-check: 0 defects, defense perimeter active.</tspan><tspan fill="#00ff66" class="cursor-blink"> █</tspan></text>
+  <circle cx="760" cy="17" r="3.5" fill="#00e5ff" class="pulse-dot"/>
+  <text x="770" y="20.5" font-family="JetBrains Mono, monospace" font-size="9px" fill="#00e5ff" font-weight="700">AUDIT_FEED</text>
+  <rect x="24" y="42" width="192" height="32" class="hud-box"/>
+  <text x="34" y="55" class="hud-title">MONITORED TARGETS</text>
+  <text x="34" y="68" class="hud-val-c">4 REPOSITORIES</text>
+  <rect x="230" y="42" width="192" height="32" class="hud-box"/>
+  <text x="240" y="55" class="hud-title">CI/CD PIPELINE</text>
+  <text x="240" y="68" class="hud-val-g">🟢 100% AUTONOMOUS</text>
+  <rect x="436" y="42" width="192" height="32" class="hud-box"/>
+  <text x="446" y="55" class="hud-title">TELEMETRY PARSER</text>
+  <text x="446" y="68" class="hud-val-p">ZERO-TOKEN PARSED</text>
+  <rect x="642" y="42" width="194" height="32" class="hud-box"/>
+  <text x="652" y="55" class="hud-title">DEFENSE NODE</text>
+  <text x="652" y="68" class="hud-val-y">ACTIVE THREAT RADAR</text>
+  <line x1="24" y1="80" x2="836" y2="80" stroke="#1f2937" stroke-width="0.8"/>
+  <text x="28"  y="92" class="col-header">TIMESTAMP (UTC)</text>
+  <text x="168" y="92" class="col-header">EVENT</text>
+  <text x="248" y="92" class="col-header">REPOSITORY</text>
+  <text x="365" y="92" class="col-header">SHA</text>
+  <text x="435" y="92" class="col-header">PAYLOAD / AUDIT COMMIT MESSAGE</text>
+  <line x1="24" y1="98" x2="836" y2="98" stroke="#1e293b" stroke-width="0.8"/>
+  <rect x="24" y="106" width="812" height="20" rx="3" fill="#0d141f" opacity="0.45"/>
+  <text x="28" y="120" class="log-date">2026-10-28 04:57</text>
+  <rect x="160" y="109.5" width="58" height="14" rx="3" fill="rgba(0, 229, 255, 0.15)" stroke="#00e5ff" stroke-width="0.6"/>
+  <text x="189" y="120" class="badge-txt" fill="#00e5ff">SYNC</text>
+  <text x="248" y="120" class="log-repo">Kekkan74</text>
+  <text x="365" y="120" class="log-sha">9a2bafe</text>
+  <text x="435" y="120" class="log-msg">chore(profile): daily heatmap &amp; stats refresh [sk...</text>
+  <rect x="24" y="130" width="812" height="20" rx="3" fill="#0d141f" opacity="0.45"/>
+  <text x="28" y="144" class="log-date">2026-05-17 14:16</text>
+  <rect x="160" y="133.5" width="58" height="14" rx="3" fill="rgba(192, 132, 252, 0.15)" stroke="#c084fc" stroke-width="0.6"/>
+  <text x="189" y="144" class="badge-txt" fill="#c084fc">MERGE</text>
+  <text x="248" y="144" class="log-repo">Top-Globales</text>
+  <text x="365" y="144" class="log-sha">38261a3</text>
+  <text x="435" y="144" class="log-msg">Merge pull request #1 from Kekkan74/copilot/set-r...</text>
+  <rect x="24" y="154" width="812" height="20" rx="3" fill="#0d141f" opacity="0.45"/>
+  <text x="28" y="168" class="log-date">2026-05-17 14:14</text>
+  <rect x="160" y="157.5" width="58" height="14" rx="3" fill="rgba(0, 229, 255, 0.15)" stroke="#00e5ff" stroke-width="0.6"/>
+  <text x="189" y="168" class="badge-txt" fill="#00e5ff">SYNC</text>
+  <text x="248" y="168" class="log-repo">Top-Globales</text>
+  <text x="365" y="168" class="log-sha">3512a89</text>
+  <text x="435" y="168" class="log-msg">chore: move project files to repository root</text>
+  <rect x="24" y="178" width="812" height="20" rx="3" fill="#0d141f" opacity="0.45"/>
+  <text x="28" y="192" class="log-date">2026-02-23 12:29</text>
+  <rect x="160" y="181.5" width="58" height="14" rx="3" fill="rgba(255, 189, 46, 0.15)" stroke="#ffbd2e" stroke-width="0.6"/>
+  <text x="189" y="192" class="badge-txt" fill="#ffbd2e">CONFIG</text>
+  <text x="248" y="192" class="log-repo">dotfiles</text>
+  <text x="365" y="192" class="log-sha">a43050e</text>
+  <text x="435" y="192" class="log-msg">My identity for @lewagon in the gitconfig</text>
+  <rect x="24" y="202" width="812" height="20" rx="3" fill="#0d141f" opacity="0.45"/>
+  <text x="28" y="216" class="log-date">2025-12-02 09:42</text>
+  <rect x="160" y="205.5" width="58" height="14" rx="3" fill="rgba(255, 189, 46, 0.15)" stroke="#ffbd2e" stroke-width="0.6"/>
+  <text x="189" y="216" class="badge-txt" fill="#ffbd2e">CONFIG</text>
+  <text x="248" y="216" class="log-repo">dotfiles</text>
+  <text x="365" y="216" class="log-sha">0e5fdfe</text>
+  <text x="435" y="216" class="log-msg">Revert &quot;My identity for @lewagon in the gitconfig&quot;</text>
+  <rect x="24" y="226" width="812" height="20" rx="3" fill="#0d141f" opacity="0.45"/>
+  <text x="28" y="240" class="log-date">2025-03-06 22:56</text>
+  <rect x="160" y="229.5" width="58" height="14" rx="3" fill="rgba(56, 189, 248, 0.15)" stroke="#38bdf8" stroke-width="0.6"/>
+  <text x="189" y="240" class="badge-txt" fill="#38bdf8">DOCS</text>
+  <text x="248" y="240" class="log-repo">apuntesPython</text>
+  <text x="365" y="240" class="log-sha">6d35cf5</text>
+  <text x="435" y="240" class="log-msg">CLASE 3</text>
+  <line x1="24" y1="272" x2="836" y2="272" stroke="#1f2937" stroke-width="0.8"/>
+  <text x="28" y="286"><tspan class="bottom-cmd">kekkan74@soc-node:~$ </tspan><tspan class="bottom-dim">git stream-audit: 0 defects, defense perimeter nominal.</tspan><tspan fill="#00ff66" class="cursor-blink"> █</tspan></text>
 </svg>

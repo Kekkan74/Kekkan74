@@ -33,7 +33,7 @@ def render_commit_activity(activity_json_path: str, output_svg_path: str):
     updated_at = data.get("updated_at", "RECENT")
 
     svg_width = 860
-    svg_height = 295
+    svg_height = 300
 
     # Badge color mappings
     badge_colors = {
@@ -56,17 +56,14 @@ def render_commit_activity(activity_json_path: str, output_svg_path: str):
       <stop offset="100%" stop-color="#05080c"/>
     </linearGradient>
     <linearGradient id="term-border" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#00e5ff" stop-opacity="0.4"/>
+      <stop offset="0%" stop-color="#00e5ff" stop-opacity="0.45"/>
       <stop offset="50%" stop-color="#1f2937" stop-opacity="0.3"/>
-      <stop offset="100%" stop-color="#00ff66" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#00ff66" stop-opacity="0.45"/>
     </linearGradient>
-    <filter id="neon-cyan" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="1.2" result="blur"/>
-      <feMerge>
-        <feMergeNode in="blur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
+    <linearGradient id="hud-bg-mini" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#111823"/>
+      <stop offset="100%" stop-color="#0b1017"/>
+    </linearGradient>
   </defs>""")
 
     # Styles
@@ -94,19 +91,22 @@ def render_commit_activity(activity_json_path: str, output_svg_path: str):
       50% { opacity: 0; }
     }
 
-    .hud-label  { font-family: 'JetBrains Mono', monospace; font-size: 10.5px; fill: #64748b; font-weight: 600; }
-    .hud-val-c  { font-family: 'JetBrains Mono', monospace; font-size: 10.5px; fill: #00e5ff; font-weight: 700; }
-    .hud-val-g  { font-family: 'JetBrains Mono', monospace; font-size: 10.5px; fill: #00ff66; font-weight: 700; }
+    .hud-box    { fill: url(#hud-bg-mini); stroke: #1e293b; stroke-width: 0.8; rx: 5; }
+    .hud-title  { font-family: 'JetBrains Mono', monospace; font-size: 8.5px; fill: #64748b; font-weight: 700; letter-spacing: 0.6px; }
+    .hud-val-c  { font-family: 'JetBrains Mono', monospace; font-size: 12px; fill: #00e5ff; font-weight: 800; }
+    .hud-val-g  { font-family: 'JetBrains Mono', monospace; font-size: 12px; fill: #00ff66; font-weight: 800; }
+    .hud-val-p  { font-family: 'JetBrains Mono', monospace; font-size: 12px; fill: #c084fc; font-weight: 800; }
+    .hud-val-y  { font-family: 'JetBrains Mono', monospace; font-size: 12px; fill: #ffbd2e; font-weight: 800; }
 
-    .col-header { font-family: 'JetBrains Mono', monospace; font-size: 9.5px; fill: #475569; font-weight: 700; letter-spacing: 0.5px; }
+    .col-header { font-family: 'JetBrains Mono', monospace; font-size: 9px; fill: #475569; font-weight: 700; letter-spacing: 0.6px; }
     .log-date   { font-family: 'JetBrains Mono', monospace; font-size: 10px; fill: #94a3b8; }
-    .log-repo   { font-family: 'JetBrains Mono', monospace; font-size: 10px; fill: #f1f5f9; font-weight: 600; }
-    .log-sha    { font-family: 'JetBrains Mono', monospace; font-size: 10px; fill: #64748b; }
+    .log-repo   { font-family: 'JetBrains Mono', monospace; font-size: 10px; fill: #f1f5f9; font-weight: 700; }
+    .log-sha    { font-family: 'JetBrains Mono', monospace; font-size: 10px; fill: #64748b; font-weight: 600; }
     .log-msg    { font-family: 'JetBrains Mono', monospace; font-size: 10px; fill: #cbd5e1; }
 
     .badge-txt  { font-family: 'JetBrains Mono', monospace; font-size: 8.5px; font-weight: 700; text-anchor: middle; }
-    .bottom-cmd { font-family: 'JetBrains Mono', monospace; font-size: 10px; fill: #00ff66; }
-    .bottom-dim { font-family: 'JetBrains Mono', monospace; font-size: 10px; fill: #475569; }
+    .bottom-cmd { font-family: 'JetBrains Mono', monospace; font-size: 9.5px; fill: #00ff66; }
+    .bottom-dim { font-family: 'JetBrains Mono', monospace; font-size: 9.5px; fill: #64748b; }
   </style>""")
 
     # Background window
@@ -120,29 +120,52 @@ def render_commit_activity(activity_json_path: str, output_svg_path: str):
     svg.append(f'  <text x="{svg_width // 2}" y="21" text-anchor="middle" class="header-title">kekkan74@soc-node: ~ (tail -f /var/log/audit/git_events.log)</text>')
 
     # Live pulse badge on top right
-    svg.append(f'  <circle cx="{svg_width - 92}" cy="17" r="3.5" fill="#00ff66" class="pulse-dot"/>')
-    svg.append(f'  <text x="{svg_width - 82}" y="20.5" font-family="JetBrains Mono, monospace" font-size="9px" fill="#00ff66" font-weight="700">AUDIT_LIVE</text>')
+    svg.append(f'  <circle cx="{svg_width - 100}" cy="17" r="3.5" fill="#00e5ff" class="pulse-dot"/>')
+    svg.append(f'  <text x="{svg_width - 90}" y="20.5" font-family="JetBrains Mono, monospace" font-size="9px" fill="#00e5ff" font-weight="700">AUDIT_FEED</text>')
 
-    # Telemetry HUD Row
-    svg.append('  <line x1="24" y1="52" x2="836" y2="52" stroke="#1f2937" stroke-width="0.8"/>')
-    svg.append('  <text x="28" y="46">'
-               f'<tspan class="hud-label">[MONITORED_NODES] </tspan><tspan class="hud-val-c">{total_repos} REPOSITORIES  </tspan>'
-               f'<tspan class="hud-label">[STATUS] </tspan><tspan class="hud-val-g">🟢 DEFENSE STREAM ACTIVE  </tspan>'
-               f'<tspan class="hud-label">[TELEMETRY] </tspan><tspan class="hud-val-c">ZERO-TOKEN PARSED</tspan>'
-               f'</text>')
+    # 4 Mini HUD Boxes
+    mini_y = 42
+    box_w = 192
+    box_h = 32
+    sp = 14
+
+    # 1: Targets
+    b1_x = 24
+    svg.append(f'  <rect x="{b1_x}" y="{mini_y}" width="{box_w}" height="{box_h}" class="hud-box"/>')
+    svg.append(f'  <text x="{b1_x + 10}" y="{mini_y + 13}" class="hud-title">MONITORED TARGETS</text>')
+    svg.append(f'  <text x="{b1_x + 10}" y="{mini_y + 26}" class="hud-val-c">{total_repos} REPOSITORIES</text>')
+
+    # 2: Pipeline
+    b2_x = b1_x + box_w + sp
+    svg.append(f'  <rect x="{b2_x}" y="{mini_y}" width="{box_w}" height="{box_h}" class="hud-box"/>')
+    svg.append(f'  <text x="{b2_x + 10}" y="{mini_y + 13}" class="hud-title">CI/CD PIPELINE</text>')
+    svg.append(f'  <text x="{b2_x + 10}" y="{mini_y + 26}" class="hud-val-g">🟢 100% AUTONOMOUS</text>')
+
+    # 3: Stream Mode
+    b3_x = b2_x + box_w + sp
+    svg.append(f'  <rect x="{b3_x}" y="{mini_y}" width="{box_w}" height="{box_h}" class="hud-box"/>')
+    svg.append(f'  <text x="{b3_x + 10}" y="{mini_y + 13}" class="hud-title">TELEMETRY PARSER</text>')
+    svg.append(f'  <text x="{b3_x + 10}" y="{mini_y + 26}" class="hud-val-p">ZERO-TOKEN PARSED</text>')
+
+    # 4: Integrity
+    b4_x = b3_x + box_w + sp
+    svg.append(f'  <rect x="{b4_x}" y="{mini_y}" width="{box_w + 2}" height="{box_h}" class="hud-box"/>')
+    svg.append(f'  <text x="{b4_x + 10}" y="{mini_y + 13}" class="hud-title">DEFENSE NODE</text>')
+    svg.append(f'  <text x="{b4_x + 10}" y="{mini_y + 26}" class="hud-val-y">ACTIVE THREAT RADAR</text>')
 
     # Column Headers
-    header_y = 69
+    header_y = 92
+    svg.append('  <line x1="24" y1="80" x2="836" y2="80" stroke="#1f2937" stroke-width="0.8"/>')
     svg.append(f'  <text x="28"  y="{header_y}" class="col-header">TIMESTAMP (UTC)</text>')
     svg.append(f'  <text x="168" y="{header_y}" class="col-header">EVENT</text>')
     svg.append(f'  <text x="248" y="{header_y}" class="col-header">REPOSITORY</text>')
     svg.append(f'  <text x="365" y="{header_y}" class="col-header">SHA</text>')
-    svg.append(f'  <text x="435" y="{header_y}" class="col-header">PAYLOAD / AUDIT MESSAGE</text>')
+    svg.append(f'  <text x="435" y="{header_y}" class="col-header">PAYLOAD / AUDIT COMMIT MESSAGE</text>')
     svg.append(f'  <line x1="24" y1="{header_y + 6}" x2="836" y2="{header_y + 6}" stroke="#1e293b" stroke-width="0.8"/>')
 
     # Commit Stream Rows
-    start_y = 96
-    row_height = 25
+    start_y = 120
+    row_height = 24
     for idx, c in enumerate(commits[:6]):
         cy = start_y + (idx * row_height)
         date_str = format_date(c.get("date", ""))
@@ -150,23 +173,22 @@ def render_commit_activity(activity_json_path: str, output_svg_path: str):
         repo = html.escape(c.get("repo", ""))
         sha = html.escape(c.get("sha", ""))
         raw_msg = c.get("message", "")
-        # Truncate message nicely
         if len(raw_msg) > 52:
             raw_msg = raw_msg[:49] + "..."
         msg = html.escape(raw_msg)
 
         txt_col, bg_col = badge_colors.get(c_type, ("#94a3b8", "rgba(148, 163, 184, 0.15)"))
 
-        # Subtle row hover background
-        svg.append(f'  <rect x="24" y="{cy - 14}" width="812" height="21" rx="4" fill="#0d141f" opacity="0.4"/>')
+        # Subtle row background
+        svg.append(f'  <rect x="24" y="{cy - 14}" width="812" height="20" rx="3" fill="#0d141f" opacity="0.45"/>')
 
         # Date
         svg.append(f'  <text x="28" y="{cy}" class="log-date">{date_str}</text>')
 
         # Event Badge Box
         badge_w = 58
-        badge_h = 15
-        svg.append(f'  <rect x="160" y="{cy - 11}" width="{badge_w}" height="{badge_h}" rx="3" fill="{bg_col}" stroke="{txt_col}" stroke-width="0.6"/>')
+        badge_h = 14
+        svg.append(f'  <rect x="160" y="{cy - 10.5}" width="{badge_w}" height="{badge_h}" rx="3" fill="{bg_col}" stroke="{txt_col}" stroke-width="0.6"/>')
         svg.append(f'  <text x="{160 + badge_w // 2}" y="{cy}" class="badge-txt" fill="{txt_col}">{c_type}</text>')
 
         # Repo
@@ -179,11 +201,11 @@ def render_commit_activity(activity_json_path: str, output_svg_path: str):
         svg.append(f'  <text x="435" y="{cy}" class="log-msg">{msg}</text>')
 
     # Bottom Terminal Prompt
-    bottom_y = svg_height - 20
-    svg.append(f'  <line x1="24" y1="{bottom_y - 14}" x2="836" y2="{bottom_y - 14}" stroke="#1f2937" stroke-width="0.8"/>')
-    svg.append(f'  <text x="28" y="{bottom_y}">'
+    bottom_y = svg_height - 16
+    svg.append(f'  <line x1="24" y1="{bottom_y - 12}" x2="836" y2="{bottom_y - 12}" stroke="#1f2937" stroke-width="0.8"/>')
+    svg.append(f'  <text x="28" y="{bottom_y + 2}">'
                f'<tspan class="bottom-cmd">kekkan74@soc-node:~$ </tspan>'
-               f'<tspan fill="#e2e8f0" font-family="JetBrains Mono, monospace" font-size="10px">git telemetry --integrity-check: 0 defects, defense perimeter active.</tspan>'
+               f'<tspan class="bottom-dim">git stream-audit: 0 defects, defense perimeter nominal.</tspan>'
                f'<tspan fill="#00ff66" class="cursor-blink"> █</tspan>'
                f'</text>')
 

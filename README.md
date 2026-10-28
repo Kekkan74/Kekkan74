@@ -65,12 +65,13 @@
   <!-- ANNUAL CONTRIBUTION HEATMAP -->
   <img src="contrib-heatmap.svg" alt="Contribution Heatmap" width="100%" />
 
+  <br/>
+
   <p align="center">
-    <img src="https://img.shields.io/badge/TELEMETRY-REAL--TIME_AUDIT-00ff66?style=flat-square&logo=counter-strike&logoColor=00ff66&labelColor=0d1117" alt="Telemetry Status" />
-    <img src="https://img.shields.io/badge/PIPELINE-GITHUB_ACTIONS_CI%2FCD-00e5ff?style=flat-square&logo=githubactions&logoColor=00e5ff&labelColor=0d1117" alt="Actions CI/CD" />
-    <img src="https://img.shields.io/badge/AUTO_SYNC-DAILY_00%3A00_UTC-ff7700?style=flat-square&logo=clock&logoColor=ff7700&labelColor=0d1117" alt="Daily Sync" />
+    <code>🛡️ SOC NODE: ONLINE</code> &nbsp;•&nbsp;
+    <code>⚡ PIPELINE: GITHUB ACTIONS CI/CD</code> &nbsp;•&nbsp;
+    <code>📡 SYNC: 100% AUTONOMOUS (00:00 UTC)</code>
   </p>
-  <p><sub><em>⚡ Telemetría de commits y actividad git sincronizada diariamente de forma autónoma.</em></sub></p>
 
 </div>
 
