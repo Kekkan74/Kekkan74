@@ -83,12 +83,12 @@
   <text x="435" y="92" class="col-header">PAYLOAD / AUDIT COMMIT MESSAGE</text>
   <line x1="24" y1="98" x2="836" y2="98" stroke="#1e293b" stroke-width="0.8"/>
   <rect x="24" y="106" width="812" height="20" rx="3" fill="#0d141f" opacity="0.45"/>
-  <text x="28" y="120" class="log-date">2026-10-28 04:57</text>
-  <rect x="160" y="109.5" width="58" height="14" rx="3" fill="rgba(0, 229, 255, 0.15)" stroke="#00e5ff" stroke-width="0.6"/>
-  <text x="189" y="120" class="badge-txt" fill="#00e5ff">SYNC</text>
+  <text x="28" y="120" class="log-date">2026-10-28 22:35</text>
+  <rect x="160" y="109.5" width="58" height="14" rx="3" fill="rgba(163, 230, 53, 0.15)" stroke="#a3e635" stroke-width="0.6"/>
+  <text x="189" y="120" class="badge-txt" fill="#a3e635">COMMIT</text>
   <text x="248" y="120" class="log-repo">Kekkan74</text>
-  <text x="365" y="120" class="log-sha">9a2bafe</text>
-  <text x="435" y="120" class="log-msg">chore(profile): daily heatmap &amp; stats refresh [sk...</text>
+  <text x="365" y="120" class="log-sha">bb6a804</text>
+  <text x="435" y="120" class="log-msg">style(profile): upgrade activity HUD cards, commi...</text>
   <rect x="24" y="130" width="812" height="20" rx="3" fill="#0d141f" opacity="0.45"/>
   <text x="28" y="144" class="log-date">2026-05-17 14:16</text>
   <rect x="160" y="133.5" width="58" height="14" rx="3" fill="rgba(192, 132, 252, 0.15)" stroke="#c084fc" stroke-width="0.6"/>
