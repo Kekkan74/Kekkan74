@@ -1,15 +1,23 @@
 {
   "username": "Kekkan74",
-  "updated_at": "2026-10-28 22:23:41 UTC",
-  "total_repos_tracked": 4,
+  "updated_at": "2026-10-29 22:06:39 UTC",
+  "total_repos_tracked": 5,
   "recent_commits": [
     {
+      "repo": "PokeStat",
+      "sha": "ba0e053",
+      "type": "FEAT",
+      "message": "feat: initial release of PokeStat Gen 9 & Randomlocke EV Optimizer",
+      "date": "2026-10-29T21:56:06Z",
+      "url": "https://github.com/Kekkan74/PokeStat/commit/ba0e053"
+    },
+    {
       "repo": "Kekkan74",
-      "sha": "9a2bafe",
+      "sha": "9bcecb6",
       "type": "SYNC",
-      "message": "chore(profile): daily heatmap & stats refresh [skip ci]",
-      "date": "2026-10-28T04:57:41Z",
-      "url": "https://github.com/Kekkan74/Kekkan74/commit/9a2bafe"
+      "message": "chore(profile): daily heatmap & telemetry refresh [skip ci]",
+      "date": "2026-10-29T05:09:32Z",
+      "url": "https://github.com/Kekkan74/Kekkan74/commit/9bcecb6"
     },
     {
       "repo": "Top-Globales",
@@ -42,14 +50,6 @@
       "message": "Revert \"My identity for @lewagon in the gitconfig\"",
       "date": "2025-12-02T09:42:28Z",
       "url": "https://github.com/Kekkan74/dotfiles/commit/0e5fdfe"
-    },
-    {
-      "repo": "apuntesPython",
-      "sha": "6d35cf5",
-      "type": "DOCS",
-      "message": "CLASE 3",
-      "date": "2025-03-06T22:56:40Z",
-      "url": "https://github.com/Kekkan74/apuntesPython/commit/6d35cf5"
     }
   ]
 }

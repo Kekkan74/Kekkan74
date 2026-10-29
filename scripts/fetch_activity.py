@@ -13,7 +13,7 @@ from datetime import datetime, timezone
 import urllib.request
 import urllib.error
 
-REPOSITORIES = ["Kekkan74", "Top-Globales", "dotfiles", "apuntesPython"]
+REPOSITORIES = ["Kekkan74", "PokeStat", "Top-Globales", "dotfiles", "apuntesPython"]
 
 def fetch_recent_commits(username: str, output_file: str):
     headers = {
@@ -73,7 +73,7 @@ def fetch_recent_commits(username: str, output_file: str):
     selected_commits = []
     if per_repo_commits.get("Kekkan74"):
         selected_commits.extend(per_repo_commits["Kekkan74"][:1])
-    for repo in ["Top-Globales", "dotfiles", "apuntesPython"]:
+    for repo in [r for r in REPOSITORIES if r != "Kekkan74"]:
         if per_repo_commits.get(repo):
             selected_commits.extend(per_repo_commits[repo][:2])
 
