@@ -1,23 +1,31 @@
 {
   "username": "Kekkan74",
-  "updated_at": "2026-10-29 22:08:04 UTC",
+  "updated_at": "2026-10-30 05:09:10 UTC",
   "total_repos_tracked": 5,
   "recent_commits": [
     {
       "repo": "PokeStat",
-      "sha": "ba0e053",
+      "sha": "c820c36",
       "type": "FEAT",
-      "message": "feat: initial release of PokeStat Gen 9 & Randomlocke EV Optimizer",
-      "date": "2026-10-29T21:56:06Z",
-      "url": "https://github.com/Kekkan74/PokeStat/commit/ba0e053"
+      "message": "feat(ux): add navigation breadcrumbs, clear user tips and accessibility polish",
+      "date": "2026-10-29T23:59:12Z",
+      "url": "https://github.com/Kekkan74/PokeStat/commit/c820c36"
+    },
+    {
+      "repo": "PokeStat",
+      "sha": "3a9def0",
+      "type": "FEAT",
+      "message": "feat(pokedex): embed full Pokemon Showdown Pokedex (1500+ species) and moves database",
+      "date": "2026-10-29T23:50:34Z",
+      "url": "https://github.com/Kekkan74/PokeStat/commit/3a9def0"
     },
     {
       "repo": "Kekkan74",
-      "sha": "9bcecb6",
-      "type": "SYNC",
-      "message": "chore(profile): daily heatmap & telemetry refresh [skip ci]",
-      "date": "2026-10-29T05:09:32Z",
-      "url": "https://github.com/Kekkan74/Kekkan74/commit/9bcecb6"
+      "sha": "e1c3057",
+      "type": "MERGE",
+      "message": "Merge branch 'main' of https://github.com/Kekkan74/Kekkan74",
+      "date": "2026-10-29T22:08:02Z",
+      "url": "https://github.com/Kekkan74/Kekkan74/commit/e1c3057"
     },
     {
       "repo": "Top-Globales",
@@ -42,14 +50,6 @@
       "message": "My identity for @lewagon in the gitconfig",
       "date": "2026-02-23T12:29:51Z",
       "url": "https://github.com/Kekkan74/dotfiles/commit/a43050e"
-    },
-    {
-      "repo": "dotfiles",
-      "sha": "0e5fdfe",
-      "type": "CONFIG",
-      "message": "Revert \"My identity for @lewagon in the gitconfig\"",
-      "date": "2025-12-02T09:42:28Z",
-      "url": "https://github.com/Kekkan74/dotfiles/commit/0e5fdfe"
     }
   ]
 }

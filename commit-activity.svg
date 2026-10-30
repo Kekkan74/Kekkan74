@@ -83,47 +83,47 @@
   <text x="435" y="92" class="col-header">PAYLOAD / AUDIT COMMIT MESSAGE</text>
   <line x1="24" y1="98" x2="836" y2="98" stroke="#1e293b" stroke-width="0.8"/>
   <rect x="24" y="106" width="812" height="20" rx="3" fill="#0d141f" opacity="0.45"/>
-  <text x="28" y="120" class="log-date">2026-10-29 21:56</text>
+  <text x="28" y="120" class="log-date">2026-10-29 23:59</text>
   <rect x="160" y="109.5" width="58" height="14" rx="3" fill="rgba(0, 255, 102, 0.15)" stroke="#00ff66" stroke-width="0.6"/>
   <text x="189" y="120" class="badge-txt" fill="#00ff66">FEAT</text>
   <text x="248" y="120" class="log-repo">PokeStat</text>
-  <text x="365" y="120" class="log-sha">ba0e053</text>
-  <text x="435" y="120" class="log-msg">feat: initial release of PokeStat Gen 9 &amp; Randoml...</text>
+  <text x="365" y="120" class="log-sha">c820c36</text>
+  <text x="435" y="120" class="log-msg">feat(ux): add navigation breadcrumbs, clear user ...</text>
   <rect x="24" y="130" width="812" height="20" rx="3" fill="#0d141f" opacity="0.45"/>
-  <text x="28" y="144" class="log-date">2026-10-29 05:09</text>
-  <rect x="160" y="133.5" width="58" height="14" rx="3" fill="rgba(0, 229, 255, 0.15)" stroke="#00e5ff" stroke-width="0.6"/>
-  <text x="189" y="144" class="badge-txt" fill="#00e5ff">SYNC</text>
-  <text x="248" y="144" class="log-repo">Kekkan74</text>
-  <text x="365" y="144" class="log-sha">9bcecb6</text>
-  <text x="435" y="144" class="log-msg">chore(profile): daily heatmap &amp; telemetry refresh...</text>
+  <text x="28" y="144" class="log-date">2026-10-29 23:50</text>
+  <rect x="160" y="133.5" width="58" height="14" rx="3" fill="rgba(0, 255, 102, 0.15)" stroke="#00ff66" stroke-width="0.6"/>
+  <text x="189" y="144" class="badge-txt" fill="#00ff66">FEAT</text>
+  <text x="248" y="144" class="log-repo">PokeStat</text>
+  <text x="365" y="144" class="log-sha">3a9def0</text>
+  <text x="435" y="144" class="log-msg">feat(pokedex): embed full Pokemon Showdown Pokede...</text>
   <rect x="24" y="154" width="812" height="20" rx="3" fill="#0d141f" opacity="0.45"/>
-  <text x="28" y="168" class="log-date">2026-05-17 14:16</text>
+  <text x="28" y="168" class="log-date">2026-10-29 22:08</text>
   <rect x="160" y="157.5" width="58" height="14" rx="3" fill="rgba(192, 132, 252, 0.15)" stroke="#c084fc" stroke-width="0.6"/>
   <text x="189" y="168" class="badge-txt" fill="#c084fc">MERGE</text>
-  <text x="248" y="168" class="log-repo">Top-Globales</text>
-  <text x="365" y="168" class="log-sha">38261a3</text>
-  <text x="435" y="168" class="log-msg">Merge pull request #1 from Kekkan74/copilot/set-r...</text>
+  <text x="248" y="168" class="log-repo">Kekkan74</text>
+  <text x="365" y="168" class="log-sha">e1c3057</text>
+  <text x="435" y="168" class="log-msg">Merge branch &#x27;main&#x27; of https://github.com/Kekkan7...</text>
   <rect x="24" y="178" width="812" height="20" rx="3" fill="#0d141f" opacity="0.45"/>
-  <text x="28" y="192" class="log-date">2026-05-17 14:14</text>
-  <rect x="160" y="181.5" width="58" height="14" rx="3" fill="rgba(0, 229, 255, 0.15)" stroke="#00e5ff" stroke-width="0.6"/>
-  <text x="189" y="192" class="badge-txt" fill="#00e5ff">SYNC</text>
+  <text x="28" y="192" class="log-date">2026-05-17 14:16</text>
+  <rect x="160" y="181.5" width="58" height="14" rx="3" fill="rgba(192, 132, 252, 0.15)" stroke="#c084fc" stroke-width="0.6"/>
+  <text x="189" y="192" class="badge-txt" fill="#c084fc">MERGE</text>
   <text x="248" y="192" class="log-repo">Top-Globales</text>
-  <text x="365" y="192" class="log-sha">3512a89</text>
-  <text x="435" y="192" class="log-msg">chore: move project files to repository root</text>
+  <text x="365" y="192" class="log-sha">38261a3</text>
+  <text x="435" y="192" class="log-msg">Merge pull request #1 from Kekkan74/copilot/set-r...</text>
   <rect x="24" y="202" width="812" height="20" rx="3" fill="#0d141f" opacity="0.45"/>
-  <text x="28" y="216" class="log-date">2026-02-23 12:29</text>
-  <rect x="160" y="205.5" width="58" height="14" rx="3" fill="rgba(255, 189, 46, 0.15)" stroke="#ffbd2e" stroke-width="0.6"/>
-  <text x="189" y="216" class="badge-txt" fill="#ffbd2e">CONFIG</text>
-  <text x="248" y="216" class="log-repo">dotfiles</text>
-  <text x="365" y="216" class="log-sha">a43050e</text>
-  <text x="435" y="216" class="log-msg">My identity for @lewagon in the gitconfig</text>
+  <text x="28" y="216" class="log-date">2026-05-17 14:14</text>
+  <rect x="160" y="205.5" width="58" height="14" rx="3" fill="rgba(0, 229, 255, 0.15)" stroke="#00e5ff" stroke-width="0.6"/>
+  <text x="189" y="216" class="badge-txt" fill="#00e5ff">SYNC</text>
+  <text x="248" y="216" class="log-repo">Top-Globales</text>
+  <text x="365" y="216" class="log-sha">3512a89</text>
+  <text x="435" y="216" class="log-msg">chore: move project files to repository root</text>
   <rect x="24" y="226" width="812" height="20" rx="3" fill="#0d141f" opacity="0.45"/>
-  <text x="28" y="240" class="log-date">2025-12-02 09:42</text>
+  <text x="28" y="240" class="log-date">2026-02-23 12:29</text>
   <rect x="160" y="229.5" width="58" height="14" rx="3" fill="rgba(255, 189, 46, 0.15)" stroke="#ffbd2e" stroke-width="0.6"/>
   <text x="189" y="240" class="badge-txt" fill="#ffbd2e">CONFIG</text>
   <text x="248" y="240" class="log-repo">dotfiles</text>
-  <text x="365" y="240" class="log-sha">0e5fdfe</text>
-  <text x="435" y="240" class="log-msg">Revert &quot;My identity for @lewagon in the gitconfig&quot;</text>
+  <text x="365" y="240" class="log-sha">a43050e</text>
+  <text x="435" y="240" class="log-msg">My identity for @lewagon in the gitconfig</text>
   <line x1="24" y1="272" x2="836" y2="272" stroke="#1f2937" stroke-width="0.8"/>
   <text x="28" y="286"><tspan class="bottom-cmd">kekkan74@soc-node:~$ </tspan><tspan class="bottom-dim">git stream-audit: 0 defects, defense perimeter nominal.</tspan><tspan fill="#00ff66" class="cursor-blink"> █</tspan></text>
 </svg>
