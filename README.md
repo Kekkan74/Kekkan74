@@ -77,17 +77,15 @@
 
 ---
 
-### 🛰️ <code>[SOC_LABS // SECURITY_RESEARCH]</code>
+### 🛰️ <code>[FEATURED_PROJECTS // ACTIVE_REPOSITORIES]</code>
 
 ```text
-kekkan74@soc-node:~/projects$ ls -la --security-focus
+kekkan74@soc-node:~/projects$ ls -la --active-repositories
 ```
 
 | Proyecto | Enfoque | Stack | Estado |
 | :--- | :--- | :--- | :--- |
-| **🛡️ SOC Telemetry &amp; Detection Lab** | Despliegue de laboratorio SOC casero con recolección de eventos Sysmon y reglas Sigma/Wazuh. | `Wazuh` `Sysmon` `Suricata` `Linux` | 🟢 *Active Lab* |
-| **🔍 Python Vulnerability Scanner** | Herramienta CLI modular para auditoría pasiva de puertos, cabeceras inseguras y CVEs conocidos. | `Python 3.13` `Sockets` `Requests` | 🟡 *In Development* |
-| **🧠 AI-Driven PCAP Anomaly Detector** | Clasificador basado en Scikit-Learn para detectar anomalías de tráfico y balizas C2 en archivos PCAP. | `PyTorch` `Scikit-Learn` `Scapy` | 🟡 *Researching* |
+| [**⚡ PokeStat**](https://github.com/Kekkan74/PokeStat) | Optimizador matemático de EVs y auditor táctico de sinergias/coberturas para Pokémon Gen 9 (VGC Dúos &amp; 6v6 Singles) con TUI interactiva. | `Python 3.12` `Rich TUI` `Typer` `Pytest` | 🟢 *Active Project* |
 
 ---
 
