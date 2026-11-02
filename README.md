@@ -32,6 +32,7 @@
 [![Wireshark](https://img.shields.io/badge/Wireshark-1679A7?style=flat-square&logo=wireshark&logoColor=white)](https://www.wireshark.org/)
 [![Wazuh](https://img.shields.io/badge/Wazuh_SIEM-007FFF?style=flat-square&logo=wazuh&logoColor=white)](https://wazuh.com/)
 [![Splunk](https://img.shields.io/badge/Splunk-000000?style=flat-square&logo=splunk&logoColor=white)](https://www.splunk.com/)
+[![KAPE](https://img.shields.io/badge/KAPE_DFIR-FF6600?style=flat-square&logo=target&logoColor=white)](https://www.kroll.com/)
 [![Nmap](https://img.shields.io/badge/Nmap-204A87?style=flat-square&logo=linux&logoColor=white)](https://nmap.org/)
 [![Burp Suite](https://img.shields.io/badge/Burp_Suite-FF6633?style=flat-square&logo=burpsuite&logoColor=white)](https://portswigger.net/burp)
 [![Metasploit](https://img.shields.io/badge/Metasploit-111111?style=flat-square&logo=kali-linux&logoColor=white)](https://www.metasploit.com/)
@@ -85,6 +86,7 @@ kekkan74@soc-node:~/projects$ ls -la --active-repositories
 
 | Proyecto | Enfoque | Stack | Estado |
 | :--- | :--- | :--- | :--- |
+| [**🛡️ SOC-Bolsillo**](https://github.com/Kekkan74/SOC-Bolsillo) | Suite de triage forense y respuesta a incidentes (DFIR) 100% automatizada y desatendida para unidades USB de respuesta rápida con empaquetado cifrado AES-256. | `Batch` `PowerShell` `KAPE` `7-Zip` `DFIR` | 🟢 *Active Project* |
 | [**⚡ PokeStat**](https://github.com/Kekkan74/PokeStat) | Optimizador matemático de EVs y auditor táctico de sinergias/coberturas para Pokémon Gen 9 (VGC Dúos &amp; 6v6 Singles) con TUI interactiva. | `Python 3.12` `Rich TUI` `Typer` `Pytest` | 🟢 *Active Project* |
 
 ---
