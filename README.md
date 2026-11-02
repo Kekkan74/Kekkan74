@@ -86,7 +86,7 @@ kekkan74@soc-node:~/projects$ ls -la --active-repositories
 
 | Proyecto | Enfoque | Stack | Estado |
 | :--- | :--- | :--- | :--- |
-| [**🛡️ SOC-Bolsillo**](https://github.com/Kekkan74/SOC-Bolsillo) | Suite de triage forense y respuesta a incidentes (DFIR) 100% automatizada y desatendida para unidades USB de respuesta rápida con empaquetado cifrado AES-256. | `Batch` `PowerShell` `KAPE` `7-Zip` `DFIR` | 🟢 *Active Project* |
+| [**🛡️ socket_pocket**](https://github.com/Kekkan74/socket_pocket) | Suite de triage forense y respuesta a incidentes (DFIR) 100% automatizada y desatendida para unidades USB de respuesta rápida con empaquetado cifrado AES-256. | `Batch` `PowerShell` `KAPE` `7-Zip` `DFIR` | 🟢 *Active Project* |
 | [**⚡ PokeStat**](https://github.com/Kekkan74/PokeStat) | Optimizador matemático de EVs y auditor táctico de sinergias/coberturas para Pokémon Gen 9 (VGC Dúos &amp; 6v6 Singles) con TUI interactiva. | `Python 3.12` `Rich TUI` `Typer` `Pytest` | 🟢 *Active Project* |
 
 ---
