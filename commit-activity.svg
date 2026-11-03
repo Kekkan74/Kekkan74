@@ -83,26 +83,26 @@
   <text x="435" y="92" class="col-header">PAYLOAD / AUDIT COMMIT MESSAGE</text>
   <line x1="24" y1="98" x2="836" y2="98" stroke="#1e293b" stroke-width="0.8"/>
   <rect x="24" y="106" width="812" height="20" rx="3" fill="#0d141f" opacity="0.45"/>
-  <text x="28" y="120" class="log-date">2026-11-01 05:23</text>
-  <rect x="160" y="109.5" width="58" height="14" rx="3" fill="rgba(0, 229, 255, 0.15)" stroke="#00e5ff" stroke-width="0.6"/>
-  <text x="189" y="120" class="badge-txt" fill="#00e5ff">SYNC</text>
+  <text x="28" y="120" class="log-date">2026-11-02 23:26</text>
+  <rect x="160" y="109.5" width="58" height="14" rx="3" fill="rgba(56, 189, 248, 0.15)" stroke="#38bdf8" stroke-width="0.6"/>
+  <text x="189" y="120" class="badge-txt" fill="#38bdf8">DOCS</text>
   <text x="248" y="120" class="log-repo">Kekkan74</text>
-  <text x="365" y="120" class="log-sha">07785d3</text>
-  <text x="435" y="120" class="log-msg">chore(profile): daily heatmap &amp; telemetry refresh...</text>
+  <text x="365" y="120" class="log-sha">71a6ad5</text>
+  <text x="435" y="120" class="log-msg">docs(profile): update repository name link to soc...</text>
   <rect x="24" y="130" width="812" height="20" rx="3" fill="#0d141f" opacity="0.45"/>
-  <text x="28" y="144" class="log-date">2026-10-29 23:59</text>
+  <text x="28" y="144" class="log-date">2026-11-02 19:48</text>
   <rect x="160" y="133.5" width="58" height="14" rx="3" fill="rgba(0, 255, 102, 0.15)" stroke="#00ff66" stroke-width="0.6"/>
   <text x="189" y="144" class="badge-txt" fill="#00ff66">FEAT</text>
   <text x="248" y="144" class="log-repo">PokeStat</text>
-  <text x="365" y="144" class="log-sha">c820c36</text>
-  <text x="435" y="144" class="log-msg">feat(ux): add navigation breadcrumbs, clear user ...</text>
+  <text x="365" y="144" class="log-sha">98e62c4</text>
+  <text x="435" y="144" class="log-msg">feat(ui): overhaul team dashboard visual hierarch...</text>
   <rect x="24" y="154" width="812" height="20" rx="3" fill="#0d141f" opacity="0.45"/>
-  <text x="28" y="168" class="log-date">2026-10-29 23:50</text>
+  <text x="28" y="168" class="log-date">2026-11-02 19:11</text>
   <rect x="160" y="157.5" width="58" height="14" rx="3" fill="rgba(0, 255, 102, 0.15)" stroke="#00ff66" stroke-width="0.6"/>
   <text x="189" y="168" class="badge-txt" fill="#00ff66">FEAT</text>
   <text x="248" y="168" class="log-repo">PokeStat</text>
-  <text x="365" y="168" class="log-sha">3a9def0</text>
-  <text x="435" y="168" class="log-msg">feat(pokedex): embed full Pokemon Showdown Pokede...</text>
+  <text x="365" y="168" class="log-sha">abc13d6</text>
+  <text x="435" y="168" class="log-msg">feat(analyzer): adapt team analysis to Duos (VGC)...</text>
   <rect x="24" y="178" width="812" height="20" rx="3" fill="#0d141f" opacity="0.45"/>
   <text x="28" y="192" class="log-date">2026-05-17 14:16</text>
   <rect x="160" y="181.5" width="58" height="14" rx="3" fill="rgba(192, 132, 252, 0.15)" stroke="#c084fc" stroke-width="0.6"/>

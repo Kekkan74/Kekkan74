@@ -1,31 +1,31 @@
 {
   "username": "Kekkan74",
-  "updated_at": "2026-11-02 05:21:47 UTC",
+  "updated_at": "2026-11-03 06:00:17 UTC",
   "total_repos_tracked": 5,
   "recent_commits": [
     {
       "repo": "Kekkan74",
-      "sha": "07785d3",
-      "type": "SYNC",
-      "message": "chore(profile): daily heatmap & telemetry refresh [skip ci]",
-      "date": "2026-11-01T05:23:04Z",
-      "url": "https://github.com/Kekkan74/Kekkan74/commit/07785d3"
+      "sha": "71a6ad5",
+      "type": "DOCS",
+      "message": "docs(profile): update repository name link to socket_pocket",
+      "date": "2026-11-02T23:26:50Z",
+      "url": "https://github.com/Kekkan74/Kekkan74/commit/71a6ad5"
     },
     {
       "repo": "PokeStat",
-      "sha": "c820c36",
+      "sha": "98e62c4",
       "type": "FEAT",
-      "message": "feat(ux): add navigation breadcrumbs, clear user tips and accessibility polish",
-      "date": "2026-10-29T23:59:12Z",
-      "url": "https://github.com/Kekkan74/PokeStat/commit/c820c36"
+      "message": "feat(ui): overhaul team dashboard visual hierarchy and accessibility for instant readability",
+      "date": "2026-11-02T19:48:03Z",
+      "url": "https://github.com/Kekkan74/PokeStat/commit/98e62c4"
     },
     {
       "repo": "PokeStat",
-      "sha": "3a9def0",
+      "sha": "abc13d6",
       "type": "FEAT",
-      "message": "feat(pokedex): embed full Pokemon Showdown Pokedex (1500+ species) and moves database",
-      "date": "2026-10-29T23:50:34Z",
-      "url": "https://github.com/Kekkan74/PokeStat/commit/3a9def0"
+      "message": "feat(analyzer): adapt team analysis to Duos (VGC) and 6v6 Singles with role and damage vs tank audit",
+      "date": "2026-11-02T19:11:40Z",
+      "url": "https://github.com/Kekkan74/PokeStat/commit/abc13d6"
     },
     {
       "repo": "Top-Globales",
