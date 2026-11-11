@@ -89,6 +89,7 @@ kekkan74@soc-node:~/projects$ ls -la --active-repositories
 | [**🌐 Sitecrack**](https://github.com/Kekkan74/Sitecrack) | Aplicación gráfica (Escritorio y Web App accesible WCAG AAA) e interceptor HTTP/S de bajo consumo con auditoría pasiva de cabeceras OWASP bajo arquitectura SOLID. | `Python 3.12` `mitmproxy` `FastAPI` `SQLite WAL` `Desktop & Web GUI` | 🟢 *Active Project* |
 | [**🛡️ socket_pocket**](https://github.com/Kekkan74/socket_pocket) | Suite de triage forense y respuesta a incidentes (DFIR) 100% automatizada y desatendida para unidades USB de respuesta rápida con empaquetado cifrado AES-256. | `Batch` `PowerShell` `KAPE` `7-Zip` `DFIR` | 🟢 *Active Project* |
 | [**⚡ PokeStat**](https://github.com/Kekkan74/PokeStat) | Optimizador matemático de EVs y auditor táctico de sinergias/coberturas para Pokémon Gen 9 (VGC Dúos &amp; 6v6 Singles) con TUI interactiva. | `Python 3.12` `Rich TUI` `Typer` `Pytest` | 🟢 *Active Project* |
+| [**✨ gen_effects**](https://github.com/Kekkan74/gen_effects) | Estudio open-source unificado de generación visual de VFX, Shaders procedurales (GLSL/HLSL), Partículas 2D/3D, Spritesheets Pixel-Art y síntesis de Audio SFX bajo Arquitectura Hexagonal/Microkernel para Godot y Unreal Engine. | `Godot 4` `GDScript` `GLSL / HLSL` `Procedural Audio` `SOLID` | 🟢 *Active Project* |
 
 ---
 
