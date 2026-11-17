@@ -1,15 +1,15 @@
 {
   "username": "Kekkan74",
-  "updated_at": "2026-11-17 11:32:53 UTC",
+  "updated_at": "2026-11-17 11:42:37 UTC",
   "total_repos_tracked": 6,
   "recent_commits": [
     {
       "repo": "data_voley",
-      "sha": "a2f2a70",
+      "sha": "230cd12",
       "type": "FEAT",
-      "message": "feat(analytics): add per-set (Set 1, Set 2, Set 3) and full-match interactive charts and comparison cards",
-      "date": "2026-11-17T11:30:51Z",
-      "url": "https://github.com/Kekkan74/data_voley/commit/a2f2a70"
+      "message": "feat(ui): add link-first welcome screen, integrated stream player, and simplified visual charts",
+      "date": "2026-11-17T11:42:11Z",
+      "url": "https://github.com/Kekkan74/data_voley/commit/230cd12"
     },
     {
       "repo": "CenterLock",
