@@ -1,15 +1,47 @@
 {
   "username": "Kekkan74",
-  "updated_at": "2026-11-17 07:22:38 UTC",
-  "total_repos_tracked": 5,
+  "updated_at": "2026-11-17 11:32:53 UTC",
+  "total_repos_tracked": 6,
   "recent_commits": [
     {
-      "repo": "Kekkan74",
-      "sha": "02d8742",
+      "repo": "data_voley",
+      "sha": "a2f2a70",
+      "type": "FEAT",
+      "message": "feat(analytics): add per-set (Set 1, Set 2, Set 3) and full-match interactive charts and comparison cards",
+      "date": "2026-11-17T11:30:51Z",
+      "url": "https://github.com/Kekkan74/data_voley/commit/a2f2a70"
+    },
+    {
+      "repo": "CenterLock",
+      "sha": "0fe87bf",
+      "type": "FEAT",
+      "message": "Initial commit: CenterLock Local Cryptographic Vault architecture",
+      "date": "2026-11-16T14:57:14Z",
+      "url": "https://github.com/Kekkan74/CenterLock/commit/0fe87bf"
+    },
+    {
+      "repo": "gen_effects",
+      "sha": "3a34eb6",
+      "type": "FEAT",
+      "message": "feat(templates): add preset gallery, 3-step node visual guide and omnivfx import/save",
+      "date": "2026-11-12T00:11:56Z",
+      "url": "https://github.com/Kekkan74/gen_effects/commit/3a34eb6"
+    },
+    {
+      "repo": "Sitecrack",
+      "sha": "420d883",
+      "type": "FEAT",
+      "message": "feat(stealth): add Stealth & Anonymity Engine with URL tracking stripper, anti-fingerprinting and Tor SOCKS5 support",
+      "date": "2026-11-06T00:51:03Z",
+      "url": "https://github.com/Kekkan74/Sitecrack/commit/420d883"
+    },
+    {
+      "repo": "socket_pocket",
+      "sha": "0e57b72",
       "type": "SYNC",
-      "message": "chore(profile): daily heatmap & telemetry refresh [skip ci]",
-      "date": "2026-11-16T05:45:13Z",
-      "url": "https://github.com/Kekkan74/Kekkan74/commit/02d8742"
+      "message": "chore(rename): rename project and references to socket_pocket",
+      "date": "2026-11-02T23:24:12Z",
+      "url": "https://github.com/Kekkan74/socket_pocket/commit/0e57b72"
     },
     {
       "repo": "PokeStat",
@@ -18,38 +50,6 @@
       "message": "feat(ui): overhaul team dashboard visual hierarchy and accessibility for instant readability",
       "date": "2026-11-02T19:48:03Z",
       "url": "https://github.com/Kekkan74/PokeStat/commit/98e62c4"
-    },
-    {
-      "repo": "PokeStat",
-      "sha": "abc13d6",
-      "type": "FEAT",
-      "message": "feat(analyzer): adapt team analysis to Duos (VGC) and 6v6 Singles with role and damage vs tank audit",
-      "date": "2026-11-02T19:11:40Z",
-      "url": "https://github.com/Kekkan74/PokeStat/commit/abc13d6"
-    },
-    {
-      "repo": "Top-Globales",
-      "sha": "38261a3",
-      "type": "MERGE",
-      "message": "Merge pull request #1 from Kekkan74/copilot/set-root-folder-to-desperdicio-zero",
-      "date": "2026-05-17T14:16:35Z",
-      "url": "https://github.com/Kekkan74/Top-Globales/commit/38261a3"
-    },
-    {
-      "repo": "Top-Globales",
-      "sha": "3512a89",
-      "type": "SYNC",
-      "message": "chore: move project files to repository root",
-      "date": "2026-05-17T14:14:51Z",
-      "url": "https://github.com/Kekkan74/Top-Globales/commit/3512a89"
-    },
-    {
-      "repo": "dotfiles",
-      "sha": "a43050e",
-      "type": "CONFIG",
-      "message": "My identity for @lewagon in the gitconfig",
-      "date": "2026-02-23T12:29:51Z",
-      "url": "https://github.com/Kekkan74/dotfiles/commit/a43050e"
     }
   ]
 }

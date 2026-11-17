@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 fetch_activity.py
-Fetches recent commits and public repository activity for Kekkan74.
+Fetches recent commits and public repository activity for Kekkan74's flagship projects.
 Uses standard library urllib so it runs anywhere without external dependencies.
 Saves balanced commit stream to data/activity.json.
 """
@@ -9,20 +9,33 @@ Saves balanced commit stream to data/activity.json.
 import json
 import os
 import sys
-from datetime import datetime, timezone
-import urllib.request
 import urllib.error
+import urllib.request
+from datetime import datetime, timezone
 
-REPOSITORIES = ["Kekkan74", "PokeStat", "Top-Globales", "dotfiles", "apuntesPython"]
+# Flagship portfolio repositories (excludes dotfiles, Top-Globales, and profile sync commits)
+REPOSITORIES = [
+    "data_voley",
+    "CenterLock",
+    "Sitecrack",
+    "socket_pocket",
+    "gen_effects",
+    "PokeStat",
+]
 
-def fetch_recent_commits(username: str, output_file: str):
+
+def fetch_recent_commits(username: str, output_file: str) -> None:
     headers = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) GitHub-Activity-Fetcher",
-        "Accept": "application/vnd.github.v3+json"
+        "Accept": "application/vnd.github.v3+json",
     }
 
+    token = os.environ.get("GITHUB_TOKEN")
+    if token:
+        headers["Authorization"] = f"Bearer {token}"
+
     per_repo_commits = {}
-    print(f"[*] Fetching commit activity for user '{username}' across {len(REPOSITORIES)} repositories...")
+    print(f"[*] Fetching commit activity for user '{username}' across {len(REPOSITORIES)} flagship repositories...")
 
     for repo in REPOSITORIES:
         url = f"https://api.github.com/repos/{username}/{repo}/commits?per_page=5"
@@ -38,49 +51,52 @@ def fetch_recent_commits(username: str, output_file: str):
                     raw_date = author_obj.get("date", "")
                     raw_msg = commit_obj.get("message", "").split("\n")[0].strip()
 
-                    # Categorize event type
                     low_msg = raw_msg.lower()
                     if "merge" in low_msg:
                         event_type = "MERGE"
-                    elif "feat" in low_msg or "add" in low_msg:
+                    elif "feat" in low_msg or "add" in low_msg or "initial" in low_msg:
                         event_type = "FEAT"
                     elif "chore" in low_msg or "refresh" in low_msg:
                         event_type = "SYNC"
                     elif "fix" in low_msg or "patch" in low_msg:
                         event_type = "PATCH"
-                    elif "docs" in low_msg or "clase" in low_msg:
+                    elif "docs" in low_msg:
                         event_type = "DOCS"
-                    elif "identity" in low_msg or "config" in low_msg or "dotfiles" in low_msg:
+                    elif "config" in low_msg:
                         event_type = "CONFIG"
                     else:
                         event_type = "COMMIT"
 
-                    per_repo_commits[repo].append({
-                        "repo": repo,
-                        "sha": sha,
-                        "type": event_type,
-                        "message": raw_msg,
-                        "date": raw_date,
-                        "url": f"https://github.com/{username}/{repo}/commit/{sha}"
-                    })
+                    per_repo_commits[repo].append(
+                        {
+                            "repo": repo,
+                            "sha": sha,
+                            "type": event_type,
+                            "message": raw_msg,
+                            "date": raw_date,
+                            "url": f"https://github.com/{username}/{repo}/commit/{sha}",
+                        }
+                    )
         except urllib.error.HTTPError as e:
             print(f"[!] HTTP error fetching {repo}: {e.code}", file=sys.stderr)
         except Exception as e:
             print(f"[!] Error fetching {repo}: {e}", file=sys.stderr)
 
-    # Balance commits so we showcase diversity across projects:
-    # Take latest 1 sync from Kekkan74, and up to 2 from each other repo
+    # Showcase 1 latest commit from each flagship repository first, then fill up to 6
     selected_commits = []
-    if per_repo_commits.get("Kekkan74"):
-        selected_commits.extend(per_repo_commits["Kekkan74"][:1])
-    for repo in [r for r in REPOSITORIES if r != "Kekkan74"]:
+    for repo in REPOSITORIES:
         if per_repo_commits.get(repo):
-            selected_commits.extend(per_repo_commits[repo][:2])
+            selected_commits.append(per_repo_commits[repo][0])
+
+    if len(selected_commits) < 6:
+        for repo in REPOSITORIES:
+            for extra in per_repo_commits.get(repo, [])[1:]:
+                if len(selected_commits) < 6:
+                    selected_commits.append(extra)
 
     # Sort chronologically descending
     selected_commits.sort(key=lambda x: x["date"], reverse=True)
 
-    # Fallback default if API rate-limited
     if not selected_commits and os.path.exists(output_file):
         print("[!] No new commits fetched. Keeping existing data.")
         return
@@ -89,7 +105,7 @@ def fetch_recent_commits(username: str, output_file: str):
         "username": username,
         "updated_at": datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S UTC"),
         "total_repos_tracked": len(REPOSITORIES),
-        "recent_commits": selected_commits[:6]
+        "recent_commits": selected_commits[:6],
     }
 
     out_dir = os.path.dirname(output_file)
@@ -98,7 +114,8 @@ def fetch_recent_commits(username: str, output_file: str):
     with open(output_file, "w", encoding="utf-8") as f:
         json.dump(result, f, indent=2, ensure_ascii=False)
 
-    print(f"[+] Successfully saved {len(result['recent_commits'])} balanced commits to {output_file}")
+    print(f"[+] Successfully saved {len(result['recent_commits'])} flagship commits to {output_file}")
+
 
 if __name__ == "__main__":
     base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
