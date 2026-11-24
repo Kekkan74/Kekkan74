@@ -1,8 +1,16 @@
 {
   "username": "Kekkan74",
-  "updated_at": "2026-11-23 06:50:00 UTC",
+  "updated_at": "2026-11-24 09:16:20 UTC",
   "total_repos_tracked": 6,
   "recent_commits": [
+    {
+      "repo": "gen_effects",
+      "sha": "43f7c08",
+      "type": "FEAT",
+      "message": "fix(shaders,exporter,ui): address code review findings (trails, additive glow, vec4 coercion, HLSL intrinsics, loop persistence, viewport clear)",
+      "date": "2026-11-23T15:41:13Z",
+      "url": "https://github.com/Kekkan74/gen_effects/commit/43f7c08"
+    },
     {
       "repo": "data_voley",
       "sha": "57bcf13",
@@ -18,14 +26,6 @@
       "message": "Initial commit: CenterLock Local Cryptographic Vault architecture",
       "date": "2026-11-16T14:57:14Z",
       "url": "https://github.com/Kekkan74/CenterLock/commit/0fe87bf"
-    },
-    {
-      "repo": "gen_effects",
-      "sha": "3a34eb6",
-      "type": "FEAT",
-      "message": "feat(templates): add preset gallery, 3-step node visual guide and omnivfx import/save",
-      "date": "2026-11-12T00:11:56Z",
-      "url": "https://github.com/Kekkan74/gen_effects/commit/3a34eb6"
     },
     {
       "repo": "Sitecrack",
